@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ExpertSystem</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="corgi.png" type="image/x-icon">
+</head>
+<body>
+	<div class="container">
+		<section class="section1" id="section1">
+			<div>
+				<img src="logo.png" alt="">
+				<p>Данная система подбирает подходящую породу собаки<br> на основе пожеланий пользователя.</p>
+				<button id="btnStart">Начать подбор</button>
+			</div>
+		</section>
+		<section class="section2 d-none" id="section2">
+			<div>
+				<p>Введите цену в рублях, за которую вы хотите приобрести собаку. <br> От 5 000 рублей до 80 000 рублей.</p>
+				<input type="text" id="priceInput" autocomplete="off">
+				<br><br>
+				<button id="priceBtn">Далее</button>
+			</div>
+		</section>
+		<section class="section3 d-none" id="section3">
+			<div>
+				<p>Выберите желаемый размер собаки.</p>
+				<br>
+				<select name="" id="sizeSelect">
+					<option value="small">Маленькая</option>
+					<option value="average">Средняя</option>
+					<option value="big">Большая</option>
+				</select>
+				<br>
+				<br>
+				<button id="sizeBtn">Далее</button>
+			</div>
+		</section>
+		<section class="section4 d-none" id="section4">
+			<div>
+				<p>Выберите желаемый тип породы.</p>
+				<br>
+				<select name="" id="breedTypeSelect">
+					<option value="hunting">Охотничья</option>
+					<option value="companion">Компаньон</option>
+					<option value="decorative">Декоративная</option>
+					<option value="service">Служебная</option>
+					<option value="rideable">Ездовая</option>
+				</select>
+				<br>
+				<br>
+				<button id="breedTypeBtn">Далее</button>
+			</div>
+		</section>
+		<section class="section5 d-none" id="section5">
+			<div>
+				<p>Выберите желаемую длину шерсти собаки.</p>
+				<br>
+				<select name="" id="furSelect">
+					<option value="short">Короткая</option>
+					<option value="average">Средняя</option>
+					<option value="long">Длинная</option>
+				</select>
+				<br>
+				<br>
+				<button id="furBtn">Далее</button>
+			</div>
+		</section>
+		<section class="section6 d-none" id="section6">
+			<div>
+				<p>Выберите желаемый характер собаки.</p>
+				<br>
+				<select name="" id="characterSelect">
+					<option value="cocky">Дерзкий</option>
+					<option value="solid">Твердый</option>
+					<option value="calm">Спокойный</option>
+					<option value="balanced">Сбалансированный</option>
+					<option value="wayward">Своенравный</option>
+				</select>
+				<br>
+				<br>
+				<button id="characterBtn">Далее</button>
+			</div>
+		</section>
+		<section class="sectionResult d-none" id="sectionResult">
+			<div>
+				<p class="p-title" id="pTitle">На данном этапе вам больше всего подходит<br> данная порода собаки:
+				</p>
+				<br>
+				<span ><img src="" alt="" id="resultImg"></span>
+				<div class="div-description">
+					<p>Цена: <span id="spanPrice">40000</span></p>
+					<p>Название породы: <span id="spanBreed">Джек-рассел-терьер</span></p>
+					<p>Тип породы: <span id="spanBreedType">Охотничья</span></p>
+					<p>Вес взрослой собаки: <span id="spanWeight">6-8 кг</span></p>
+					<p>Рост: <span id="spanGrowth">25-38 см</span></p>
+				</div>
+				<a href="#" id="link" target="_blank">Подробнее</a>
+				<div class="div-explanation">
+					<br>
+					<b>Почему именно эта порода?</b>
+					<br>
+					<span id="spanExplanation">Данная порода самая дорогая из всех, которые подходят вам по бюджету.</span>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script src="dataBase.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

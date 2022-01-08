@@ -1,0 +1,241 @@
+// Цена price - средняя цена
+// size - размер собаки: маленькая, средняя, большая
+// breedType - тип породы: hunting, companion, decorative, service, rideable - ездовая
+// fur - шерсть: long, average, short
+// character - характер: cocky-дерзкий, solid - твердый, calm - спокойный, balanced - уравновешенный, wayward - своенравный
+
+// countryOrigin - страна происхождения
+// timeAppearanceBreed - время появления породы
+// adultDogWeight - Вес взрослой собаки
+// growth - Рост(высота в холке)
+// lifespan - Продолжительность жизни
+// link - ссылка на подробную статью о породе
+
+const data = [
+	{
+		price: 35000,
+		breed: "Джек-рассел-терьер",
+		size: "small",
+		breedType: "hunting",
+		fur: "short",
+		character: "cocky",
+		countryOrigin: "Англия",
+		timeAppearanceBreed: "Конец ХIХ века",
+		adultDogWeight: "6-8 кг",
+		growth: "25-38 см",
+		lifespan: "12-14 лет",
+		link: "https://www.proplan.ru/dog/breeds/dzhek-rassel-terer/?utm_medium=cpc&utm_source=google&utm_campaign=dan_ru_purina_ppd_ru_go_non_brand_br_kws_con_dog_wellness_care&utm_term=&utm_content=_dsa-1426552935044|cid|10574414322|aid|538715286406|gid|134377301188|pos||src|g_&gclid=Cj0KCQiA5aWOBhDMARIsAIXLlkdlf7ZoosGBJMDpsErUJ955VpcZ5kWiFvKV_C5o7Lr2Rvy8-C52itoaAhMfEALw_wcB",
+		image: "https://www.purinaone.ru/dog/sites/default/files/2020-06/dzhek-rassel-terer-foto-tablet.jpg"
+	},
+	{
+		price: 80000,
+		breed: "Акита-Ину",
+		size: "big",
+		breedType: "companion",
+		fur: "average",
+		character: "solid",
+		countryOrigin: "Япония",
+		timeAppearanceBreed: "1964 год",
+		adultDogWeight: "32-45 кг",
+		growth: "52-70 см",
+		lifespan: "10-12 лет",
+		link: "https://www.proplan.ru/dog/breeds/akita-inu/",
+		image: "https://hvost.news/upload/resize_cache/iblock/c33/750_400_1/c33dfb90268b89637fa1a78ea923848d.jpg"
+	},
+	{
+		price: 30000,
+		breed: "Английский Бульдог",
+		size: "avegage",
+		breedType: "companion",
+		fur: "short",
+		character: "calm",
+		countryOrigin: "Великобритания",
+		timeAppearanceBreed: "ХIХ век",
+		adultDogWeight: "18-25 кг",
+		growth: "31-40 см",
+		lifespan: "8-10 лет",
+		link: "https://www.proplan.ru/dog/breeds/anglijskij-buldog/",
+		image: "https://royal-groom.ru/sites/default/files/breed/angliiskiibuldog.jpg"
+	},
+	{
+		price: 30000,
+		breed: "Померанский Шпиц",
+		size: "small",
+		breedType: "decorative",
+		fur: "long",
+		character: "cocky",
+		countryOrigin: "Германия",
+		timeAppearanceBreed: "ХVIII век",
+		adultDogWeight: "1,4-3,5 кг",
+		growth: "16-22 см",
+		lifespan: "12-15 лет",
+		link: "https://www.proplan.ru/dog/breeds/shpic/?utm_medium=cpc&utm_source=google&utm_campaign=dan_ru_purina_ppd_ru_go_non_brand_br_kws_con_dog_breed_breed&utm_term=%D1%88%D0%BF%D0%B8%D1%86%20%D0%BE%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%BE%D1%80%D0%BE%D0%B4%D1%8B&utm_content=ppd_Stext_Shpicz_kwd-390832139210|cid|11604390453|aid|479457541825|gid|108388783650|pos||src|g_&gclid=Cj0KCQiA5aWOBhDMARIsAIXLlkdvLsMqWrd5up5y6ReT_wb-UqSOK-ov0x8k5MlBpjdwOKiPuUKPI1EaAgynEALw_wcB",
+		image: "https://www.pedigree.ru/uploads/images/wiki/pomeranskij-shpits-zabolevaniya.jpg"
+	},
+	{
+		price: 45000,
+		breed: "Доберман",
+		size: "big",
+		breedType: "service",
+		fur: "short",
+		character: "balanced",
+		countryOrigin: "Германия",
+		timeAppearanceBreed: "ХIХ век",
+		adultDogWeight: "32-45 кг",
+		growth: "63-72 см",
+		lifespan: "10-13 лет",
+		link: "https://www.proplan.ru/dog/breeds/doberman/",
+		image: "https://eponym.ru/GaleryImages/T9DKBKO26FHQEX3HMOJJV47JH.jpg"
+	},
+	{
+		price: 5000,
+		breed: "Лайка",
+		size: "average",
+		breedType: "companion",
+		fur: "average",
+		character: "wayward",
+		countryOrigin: "Россия",
+		timeAppearanceBreed: "Начало ХХ века",
+		adultDogWeight: "16-28 кг",
+		growth: "50-64 см",
+		lifespan: "10-15 лет",
+		link: "https://www.proplan.ru/dog/breeds/laika/",
+		image: "https://lapkins.ru/upload/iblock/ae6/ae65dc9e504dc176a7c0dc090eb61be7.jpg"
+	},
+	{
+		price: 30000,
+		breed: "Маламут",
+		size: "big",
+		breedType: "rideable",
+		fur: "average",
+		character: "wayward",
+		countryOrigin: "США",
+		timeAppearanceBreed: "Конец XIX века",
+		adultDogWeight: "34-40 кг",
+		growth: "58-64 см",
+		lifespan: "10-14 лет",
+		link: "https://www.proplan.ru/dog/breeds/malamut/",
+		image: "https://umnayasobaka.com/wp-content/uploads/2019/06/Malamut_1_05141145.jpg"
+	},
+	{
+		price: 70000,
+		breed: "Ньюфаундленд",
+		size: "big",
+		breedType: "companion",
+		fur: "long",
+		character: "balanced",
+		countryOrigin: "Канада",
+		timeAppearanceBreed: "XV-XVII века",
+		adultDogWeight: "50-68 кг",
+		growth: "62-68 см",
+		lifespan: "8-10 лет",
+		link: "https://www.proplan.ru/dog/breeds/nyufaundlend/",
+		image: "https://hvost.news/upload/resize_cache/iblock/c50/750_400_1/c5099f45b62aca03baac6db3b010f21d.jpg"
+	},
+	{
+		price: 40000,
+		breed: "Бернский Зенненхунд",
+		size: "big",
+		breedType: "companion",
+		fur: "long",
+		character: "balanced",
+		countryOrigin: "Швейцария",
+		timeAppearanceBreed: "ХХ век",
+		adultDogWeight: "36-50 кг",
+		growth: "58-71 см",
+		lifespan: "6-8 лет",
+		link: "https://www.proplan.ru/dog/breeds/bernskij-zennenhund/",
+		image: "https://prosobak.com/wp-content/uploads/2016/05/meet-the-breed-bernese-mountain-dog-600x338.jpg"
+	},
+	{
+		price: 30000,
+		breed: "Бобтейл",
+		size: "big",
+		breedType: "companion",
+		fur: "long",
+		character: "balanced",
+		countryOrigin: "Великобритания",
+		timeAppearanceBreed: "ХIХ век",
+		adultDogWeight: "25-45 кг",
+		growth: "50-61 см",
+		lifespan: "10-12 лет",
+		link: "https://www.proplan.ru/dog/breeds/bobtejl/",
+		image: "https://hvost.news/upload/resize_cache/iblock/254/750_400_1/254b4edd453542f2780ff4041c29fbb8.jpg"
+	},
+	{
+		price: 15000,
+		breed: "Бультерьер",
+		size: "big",
+		breedType: "companion",
+		fur: "short",
+		character: "balanced",
+		countryOrigin: "Великобритания",
+		timeAppearanceBreed: "ХIХ век",
+		adultDogWeight: "23-32 кг",
+		growth: "53-56 см",
+		lifespan: "10-12 лет",
+		link: "https://www.proplan.ru/dog/breeds/bulterer/",
+		image: "https://lh3.googleusercontent.com/proxy/_ELusDQdy54rpP68BlUA-JZrO-h9mbUmRNcM6q0WPS_QqI-3H01XsPLY6PI9LFt0e_OtRnyk1efSvOB-G1z0BcskioY_YL_Xpi-833MwLjkE6qdtqA"
+	},
+	{
+		price: 30000,
+		breed: "Йоркширский Терьер",
+		size: "small",
+		breedType: "decorative",
+		fur: "long",
+		character: "balanced",
+		countryOrigin: "Англия",
+		timeAppearanceBreed: "ХIХ век",
+		adultDogWeight: "1,8кг-3,1 кг",
+		growth: "20 см",
+		lifespan: "13-16 лет",
+		link: "https://www.proplan.ru/dog/breeds/jorkshirskij-terer/",
+		image: "http://myyorks.ru/wp-content/uploads/2019/06/vospitanii-jorkshirskogo-terera.jpg"
+	},
+	{
+		price: 10000,
+		breed: "Пекинес",
+		size: "small",
+		breedType: "decorative",
+		fur: "average",
+		character: "balanced",
+		countryOrigin: "Китай",
+		timeAppearanceBreed: "Более 3000 лет назад",
+		adultDogWeight: "до 5 кг",
+		growth: "До 25 см",
+		lifespan: "15 лет",
+		link: "https://www.proplan.ru/dog/breeds/pekines/",
+		image: "https://hvost.news/upload/resize_cache/iblock/88c/750_400_1/88c326c4d144c17091147780e51d41c4.jpg"
+	},
+	{
+		price: 20000,
+		breed: "Немецкий пинчер",
+		size: "average",
+		breedType: "hunting",
+		fur: "short",
+		character: "balanced",
+		countryOrigin: "Германия",
+		timeAppearanceBreed: "XVII-XVIII века",
+		adultDogWeight: "12-14 кг",
+		growth: "43-58 см",
+		lifespan: "15 лет",
+		link: "https://www.proplan.ru/dog/breeds/nemeckij-pincher/",
+		image: "https://sobaky.info/wp-content/uploads/2019/10/4-2.jpg"
+	},
+	{
+		price: 50000,
+		breed: "Сиба-Ину",
+		size: "average",
+		breedType: "service",
+		fur: "average",
+		character: "wayward",
+		countryOrigin: "Япония",
+		timeAppearanceBreed: "III век до н.э.",
+		adultDogWeight: "7-13 кг",
+		growth: "35-41 см",
+		lifespan: "12-15 лет",
+		link: "https://www.proplan.ru/dog/breeds/siba-inu/",
+		image: "https://hvost.news/upload/resize_cache/iblock/aef/750_400_1/aefb25fbd98bad22532829b20f57c1de.jpg"
+	}
+];
+//15

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+/*font-family: 'Open Sans', sans-serif;*/
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	min-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(bg.png);
+	background-position: center center;
+	background-size: cover;
+}
+
+.section1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+section div {
+	text-align: center;
+}
+
+.section1 div img, .section1 div p {
+	margin-bottom: 30px;
+}
+
+button {
+	cursor: pointer;
+	padding: 10px 20px;
+	background: transparent;
+	border: 1px solid black;
+	border-radius: 5px;
+	transition: 0.2s all ease;
+}
+
+button:hover {
+	background: #000;
+	color: white;
+	transition: 0.2s all ease;
+}
+
+.section2 div p {
+	margin-bottom: 20px;
+}
+
+.section2 input {
+
+}
+
+.section2 input:focus, .section2 input:active {
+	outline: none;
+}
+
+.d-none {
+	display: none;
+}
+
+#resultImg {
+	width: 400px;
+}
+
+.sectionResult {
+	padding-top: 40px;
+}
+
+.sectionResult p.p-title {
+	font-weight: 600;
+}
+
+.div-description {
+	text-align: left;
+}
